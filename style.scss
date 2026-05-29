@@ -314,3 +314,129 @@ footer {
         }
     }
 }
+
+
+@media (max-width: 768px) {
+
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 0;
+        gap: 10px;
+    }
+
+    header .container .logo .logo-svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    header .container nav ul {
+        gap: 20px;
+    }
+
+    main .title {
+        .container {
+            background-image: none !important;
+            padding-top: 30px;
+            padding-bottom: 0;
+            text-align: center;
+            font-size: 1em;
+
+            .name {
+                font-size: 1.2em;
+                span {
+                    font-size: 1.4em;
+                }
+            }
+
+            .contact {
+                display: flex;
+                justify-content: center;
+            }
+
+            .social {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                font-size: 1.4em;
+                margin-bottom: 0;
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 280px;
+            background-image: url('images/myself.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+    }
+
+    main .about {
+        padding: 40px 0;
+
+        .container {
+            .title2 {
+                font-size: 1.6em;
+                text-align: center;
+            }
+
+            .about_text {
+                font-size: 0.9em;
+                line-height: 1.7;
+            }
+        }
+    }
+
+    main .skills {
+        padding: 40px 0;
+
+        .container {
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .skills-grid {
+                gap: 10px;
+
+                .skill-card {
+                    width: 95px;
+                    height: 95px;
+                    gap: 8px;
+
+                    i {
+                        font-size: 2em;
+                    }
+
+                    span {
+                        font-size: 0.75em;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        padding: 40px 0 30px;
+
+        .container {
+            .footer-title {
+                font-size: 1.6em;
+            }
+
+            .footer-contacts {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+
+                .footer-contact-item {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
