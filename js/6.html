@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хрестики-нулики</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="players">
+            <div class="player-1">rabbit: <span id="player-1-name">Player 1</span></div>
+            <div class="player-2">carrot: <span id="player-2-name">Player 2</span></div>
+        </div>
+        <div id="app">
+            <button onclick="clicked(1)" id="1"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(2)" id="2"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(3)" id="3"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(4)" id="4"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(5)" id="5"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(6)" id="6"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(7)" id="7"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(8)" id="8"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+            <button onclick="clicked(9)" id="9"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
+                    src="images/carrot.png"></button>
+        </div>
+
+        <div class="score">
+
+            <div class="score_rabbit">rabbit: <span id="score_rabbit">0</span></div>
+            <div class="score_carrot">carrot: <span id="score_carrot">0</span></div>
+            <div class="score_draw">Draw: <span id="score_draw">0</span></div>
+
+        </div>
+    </div>
+
+    <div class="reset">
+        <button onclick="reset()">RESET</button>
+    </div>
+
+    <script src="3.js"></script>
+</body>
+
+</html>
