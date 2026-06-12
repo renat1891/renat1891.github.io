@@ -1,9 +1,61 @@
 
-
 let player = "x";
-let score_rabbit = 0;
-let score_carrot = 0;
+let score_p1 = 0;
+let score_p2 = 0;
 let score_draw = 0;
+
+const images = {
+    rabbit: "images/rabbit.png",
+    carrot: "images/carrot.png",
+    dog:    "images/dog.png",
+    meat:   "images/meat.png"
+};
+
+const labels = {
+    rabbit: "Кролик",
+    carrot: "Морква",
+    dog:    "Собака",
+    meat:   "М'ясо"
+};
+
+function getChoice(playerNum) {
+    return document.getElementById("select-" + playerNum).value;
+}
+
+function changeAvatar(playerNum) {
+    const val1 = getChoice(1);
+    const val2 = getChoice(2);
+
+    if (val1 === val2) {
+        const allValues = ["rabbit", "carrot", "dog", "meat"];
+        if (playerNum === 1) {
+            for (let i = 0; i < allValues.length; i++) {
+                if (allValues[i] !== val1) {
+                    document.getElementById("select-2").value = allValues[i];
+                    break;
+                }
+            }
+        } else {
+            for (let i = 0; i < allValues.length; i++) {
+                if (allValues[i] !== val2) {
+                    document.getElementById("select-1").value = allValues[i];
+                    break;
+                }
+            }
+        }
+    }
+
+    updateAvatars();
+}
+
+function updateAvatars() {
+    const c1 = getChoice(1);
+    const c2 = getChoice(2);
+    document.getElementById("avatar-1").src = images[c1];
+    document.getElementById("avatar-2").src = images[c2];
+    document.getElementById("turn-p1-name").textContent = labels[c1];
+    document.getElementById("turn-p2-name").textContent = labels[c2];
+}
 
 function clicked(id) {
     let element = document.getElementById(id);
@@ -11,13 +63,23 @@ function clicked(id) {
 
     element.dataset.value = player;
 
+    let choice;
     if (player === "x") {
-        element.getElementsByClassName("rabbit-img")[0].classList.add("visible");
+        choice = getChoice(1);
     } else {
-        element.getElementsByClassName("carrot-img")[0].classList.add("visible");
+        choice = getChoice(2);
     }
 
-    player = player === "x" ? "o" : "x";
+    const img = element.getElementsByClassName("cell-img")[0];
+    img.src = images[choice];
+    img.classList.add("visible");
+
+    if (player === "x") {
+        player = "o";
+    } else {
+        player = "x";
+    }
+
     checkWinner();
 }
 
@@ -41,35 +103,33 @@ function checkWinner() {
     for (const [a, b, c] of lines) {
         if (a && a === b && b === c) {
             if (a === "x") {
-                score_rabbit++;
-                document.getElementById("score_rabbit").textContent = score_rabbit;
-                alert("Переміг кролик!");
-            }
-            else {
-                score_carrot++;
-                document.getElementById("score_carrot").textContent = score_carrot;
-                alert("Перемогла морква!");
+                score_p1++;
+                document.getElementById("score_p1").textContent = score_p1;
+                alert("Переміг Player 1 (" + labels[getChoice(1)] + ")");
+            } else {
+                score_p2++;
+                document.getElementById("score_p2").textContent = score_p2;
+                alert("Переміг Player 2 (" + labels[getChoice(2)] + ")");
             }
             return;
         }
-        
     }
 
     if (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9) {
         score_draw++;
         document.getElementById("score_draw").textContent = score_draw;
-        alert("Нічия!");
+        alert("Нічия");
     }
 }
 
 function reset() {
     for (let i = 1; i <= 9; i++) {
         document.getElementById(i).dataset.value = "";
-        document.getElementById(i).getElementsByClassName("rabbit-img")[0].classList.remove("visible");
-        document.getElementById(i).getElementsByClassName("carrot-img")[0].classList.remove("visible")
+        const img = document.getElementById(i).getElementsByClassName("cell-img")[0];
+        img.classList.remove("visible");
+        img.src = "";
     }
-
     player = "x";
 }
 
-
+updateAvatars();

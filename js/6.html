@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,42 +11,61 @@
 
 <body>
     <div class="container">
+
         <div class="players">
-            <div class="player-1">rabbit: <span id="player-1-name">Player 1</span></div>
-            <div class="player-2">carrot: <span id="player-2-name">Player 2</span></div>
+            <div class="player-block">
+                <div class="player-label">Player 1</div>
+                <div class="player-avatar">
+                    <img id="avatar-1" src="" alt="">
+                </div>
+                <select id="select-1" onchange="changeAvatar(1)">
+                    <option value="rabbit">Кролик</option>
+                    <option value="carrot">Морква</option>
+                    <option value="dog">Собака</option>
+                    <option value="meat">М'ясо</option>
+                </select>
+            </div>
+
+            <div class="player-block">
+                <div class="player-label">Player 2</div>
+                <div class="player-avatar">
+                    <img id="avatar-2" src="" alt="">
+                </div>
+                <select id="select-2" onchange="changeAvatar(2)">
+                    <option value="carrot">Морква</option>
+                    <option value="rabbit">Кролик</option>
+                    <option value="meat">М'ясо</option>
+                    <option value="dog">Собака</option>
+                </select>
+            </div>
         </div>
-        <div id="app">
-            <button onclick="clicked(1)" id="1"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(2)" id="2"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(3)" id="3"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(4)" id="4"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(5)" id="5"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(6)" id="6"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(7)" id="7"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(8)" id="8"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
-            <button onclick="clicked(9)" id="9"><img class="rabbit-img" src="images/rabbit.png"><img class="carrot-img"
-                    src="images/carrot.png"></button>
+
+        <div id="app-wrap">
+            <div id="turn-info">
+                Player 1: <span id="turn-p1-name"></span> | Player 2: <span id="turn-p2-name"></span>
+            </div>
+            <div id="app">
+                <button onclick="clicked(1)" id="1"><img class="cell-img"></button>
+                <button onclick="clicked(2)" id="2"><img class="cell-img"></button>
+                <button onclick="clicked(3)" id="3"><img class="cell-img"></button>
+                <button onclick="clicked(4)" id="4"><img class="cell-img"></button>
+                <button onclick="clicked(5)" id="5"><img class="cell-img"></button>
+                <button onclick="clicked(6)" id="6"><img class="cell-img"></button>
+                <button onclick="clicked(7)" id="7"><img class="cell-img"></button>
+                <button onclick="clicked(8)" id="8"><img class="cell-img"></button>
+                <button onclick="clicked(9)" id="9"><img class="cell-img"></button>
+            </div>
+            <div class="reset">
+                <button onclick="reset()">RESET</button>
+            </div>
         </div>
 
         <div class="score">
-
-            <div class="score_rabbit">rabbit: <span id="score_rabbit">0</span></div>
-            <div class="score_carrot">carrot: <span id="score_carrot">0</span></div>
+            <div>Player 1: <span id="score_p1">0</span></div>
+            <div>Player 2: <span id="score_p2">0</span></div>
             <div class="score_draw">Draw: <span id="score_draw">0</span></div>
-
         </div>
-    </div>
 
-    <div class="reset">
-        <button onclick="reset()">RESET</button>
     </div>
 
     <script src="3.js"></script>
