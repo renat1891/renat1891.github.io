@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def home():
 
 @app.route('/about')
 def about():
-    return 'This is the about page.'
+    return render_template('about.html')
 
 @app.route('/user/<username>')
 def user(username):
@@ -27,6 +27,8 @@ def form():
     if request.method == 'POST':
         name = request.form['myname']
         names.append(name)
+        return redirect(url_for('form'))
+    
     return render_template('form.html', names=names)
 
 if __name__ == '__main__':
