@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Відгуки користувачів</h1>
+
+    <form method="POST">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="review">Відгук:</label><br>
+        <textarea id="review" name="text" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="rating">Оцінка:</label>
+        <select id="rating" name="rating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+            
+
+        <input type="submit" value="Надіслати">
+    </form>
+    <div>
+        <h2>Відгуки:</h2>
+        {% for review in reviews %}
+            <p><strong>{{ review.name }}</strong>: {{ review.text }} (Оцінка: {{ review.rating }})</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
