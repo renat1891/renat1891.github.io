@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Album — Add Photo{% endblock %}
+
+{% block content %}
+
+<section class="album-hero">
+  <h1>Add Photo</h1>
+  <p class="lead">Fill in the form below to add a new photo to the gallery.</p>
+</section>
+
+<section class="add-section">
+  <div class="container">
+    <div class="add-card">
+
+      <h2>New Photo</h2>
+
+      {% if errors %}
+      <div class="error-banner">
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        <ul class="mb-0 ps-3">
+          {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <form method="post" action="{{ url_for('add') }}">
+
+        
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+            <input class="form-control" type="url" name="img_url"
+                   value="{{ form.get('img_url', '') }}"
+                   placeholder="https://images.unsplash.com/…"/>
+          </div>
+          <div class="form-text text-secondary">
+            Paste a direct image link (Unsplash, your hosting, etc.)
+          </div>
+        </div>
+
+      
+        <div class="mb-3">
+          <label class="form-label">Title <span style="color:#dc3545">*</span></label>
+          <input class="form-control" name="title" maxlength="80"
+                 value="{{ form.get('title', '') }}"
+                 placeholder="e.g. Morning light over the Carpathians"/>
+        </div>
+
+       
+        <div class="mb-3">
+          <label class="form-label">Author <span style="color:#dc3545">*</span></label>
+          <input class="form-control" name="author"
+                 value="{{ form.get('author', '') }}"
+                 placeholder="Full name of photographer"/>
+        </div>
+
+          <div class="col-sm-6">
+            <label class="form-label">Year</label>
+            <input class="form-control" type="number" name="year"
+                   min="1900" max="2099"
+                   value="{{ form.get('year', '') }}"
+                   placeholder="2024"/>
+          </div>
+        </div>
+
+        
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" name="desc" rows="3" maxlength="300"
+                    placeholder="Brief description, shooting location, idea…">{{ form.get('desc', '') }}</textarea>
+        </div>
+
+       
+        <div class="mb-4">
+          <label class="form-label">Location</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+            <input class="form-control" name="location"
+                   value="{{ form.get('location', '') }}"
+                   placeholder="City, Country"/>
+          </div>
+        </div>
+
+        
+        <div class="d-flex gap-2 flex-wrap">
+          <button type="submit" class="btn btn-primary px-4">
+            <i class="bi bi-plus-lg me-1"></i>Add to Gallery
+          </button>
+          <a href="{{ url_for('gallery') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

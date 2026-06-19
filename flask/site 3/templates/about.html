@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Album — About{% endblock %}
+
+{% block content %}
+
+<section class="album-hero">
+  <h1>About the Gallery</h1>
+  <p class="lead">
+    An independent platform for Ukrainian photographers.
+    Since {{ stats.founded }}, connecting authors who find beauty in the everyday.
+  </p>
+  <div class="d-flex gap-2 justify-content-center">
+    <a href="{{ url_for('gallery') }}" class="btn btn-primary px-4">View Gallery</a>
+    <a href="{{ url_for('add') }}" class="btn btn-secondary px-4">Add a Photo</a>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+
+
+    <div class="row g-5">
+
+    
+      <div class="col-lg-6">
+        <p class="section-label">Our values</p>
+        <div class="values-list">
+          <div class="value-item">
+            <span class="value-num">01</span>
+            <div>
+              <h6>Authenticity</h6>
+              <p>We publish only original works. No stock photos, no AI-generated images.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">02</span>
+            <div>
+              <h6>Community</h6>
+              <p>The gallery lives through people. We are open to everyone — beginners to masters.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">03</span>
+            <div>
+              <h6>Quality</h6>
+              <p>Every work goes through curatorial review before publication.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-num">04</span>
+            <div>
+              <h6>Accessibility</h6>
+              <p>The platform is free for all authors. Always.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="col-lg-6">
+        <p class="section-label">The team</p>
+        <div class="row g-3">
+          {% for member in team %}
+          <div class="col-sm-6">
+            <div class="team-card">
+              <img src="{{ member.img }}" alt="{{ member.name }}"/>
+              <div class="name">{{ member.name }}</div>
+              <div class="role">{{ member.role }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,276 @@
+.album-hero {
+  padding: 80px 16px;
+  text-align: center;
+  background-color: #2b3035;
+  border-bottom: 1px solid #373b3e;
+}
+
+.album-hero h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.album-hero p.lead {
+  color: #adb5bd;
+  max-width: 560px;
+  margin: 0 auto 24px;
+  font-size: 1.05em;
+}
+
+.carousel-section .carousel-item img {
+  height: 520px;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(.85);
+}
+
+.carousel-caption h5 {
+  font-size: 1.75em;
+  text-shadow: 0 1px 4px rgba(0,0,0,.7);
+}
+
+.album-section {
+  padding: 48px 0 80px;
+  background-color: #212529;
+}
+
+.alert-flash {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  margin-bottom: 8px;
+  border-radius: .375em;
+  font-size: .9em;
+}
+
+.btn-close-flash {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1em;
+  opacity: .6;
+}
+
+.card .card-text {
+  color: #adb5bd;
+  font-size: .9em;
+}
+
+.card .btn-sm {
+  font-size: .8em;
+}
+
+.card .text-muted {
+  color: #6c757d !important;
+  font-size: .82em;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top-color: #373b3e;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-bar {
+  display: flex;
+  gap: .4em;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filter-bar .btn {
+  font-size: .8em;
+  padding: 5px 13px;
+  border-radius: 20px;
+}
+
+.add-section {
+  padding: 48px 0 80px;
+  background-color: #212529;
+}
+
+.add-card {
+  background-color: #2b3035;
+  border: 1px solid #373b3e;
+  border-radius: .5em;
+  padding: 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.add-card h2 {
+  color: #fff;
+  font-size: 1.6em;
+  margin-bottom: 4px;
+}
+
+.add-card .sub {
+  color: #6c757d;
+  font-size: .88em;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  color: #adb5bd;
+  font-size: .82em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+  background-color: #1a1d20;
+  border-color: #495057;
+  color: #dee2e6;
+  font-size: .9em;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #1a1d20;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 .2em rgba(13,110,253,.25);
+  color: #dee2e6;
+}
+
+.error-banner {
+  background-color: rgba(220,53,69,.15);
+  border: 1px solid #dc3545;
+  border-radius: .375em;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  color: #ea868f;
+  font-size: .88em;
+}
+
+.about-section {
+  padding: 48px 0 80px;
+  background-color: #212529;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: .375em;
+  filter: grayscale(20%) brightness(.85);
+}
+
+.values-list .value-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #373b3e;
+  display: flex;
+  gap: 1em;
+}
+
+.value-num {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 1em;
+  min-width: 2em;
+  padding-top: 2px;
+}
+
+.value-item h6 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.value-item div {
+  color: #6c757d;
+  font-size: .85em;
+  margin: 0;
+}
+
+.team-card {
+  background-color: #2b3035;
+  border: 1px solid #373b3e;
+  border-radius: .5em;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.team-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d6efd;
+  margin-bottom: 12px;
+}
+
+.team-card .name {
+  color: #fff;
+  font-weight: 600;
+  font-size: .95em;
+  margin-bottom: 2px;
+}
+
+.team-card .role {
+  color: #6c757d;
+  font-size: .78em;
+  text-transform: uppercase;
+}
+
+.stat-item .num {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-item .lbl {
+  font-size: .75em;
+  color: #6c757d;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  background-color: #2b3035;
+  border-top: 1px solid #373b3e;
+  padding: 32px 0;
+  color: #6c757d;
+  font-size: .85em;
+}
+
+.site-footer .back-top {
+  color: #0d6efd;
+  text-decoration: none;
+  font-size: .85em;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: .375em;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.section-label {
+  font-size: .78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6c757d;
+  margin-bottom: 20px;
+}

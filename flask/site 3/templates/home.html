@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Album — Home{% endblock %}
+
+{% block content %}
+
+
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {% for photo in featured %}
+    <div class="carousel-item {% if loop.first %}active{% endif %}">
+      <img src="{{ photo.img }}" class="d-block w-100"
+           style="height:520px;object-fit:cover;" alt="{{ photo.title }}"/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ photo.title }}</h5>
+        <div>{{ photo.author }} · {{ photo.location }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div class="bg-dark py-5 text-center border-bottom border-secondary">
+  <div class="container">
+    <h1 class="fw-light text-white">Album example</h1>
+    <p class="lead text-secondary">
+      Something short and leading about the collection below — its contents, the creator, etc.
+      Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+    </p>
+    <div class="d-flex gap-2 justify-content-center">
+      <a href="/gallery" class="btn btn-primary">View Gallery</a>
+      <a href="/add" class="btn btn-secondary">Add Photo</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg-body-tertiary py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      {% for photo in featured[:3] %}
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ photo.img }}" class="card-img-top"
+               style="height:225px;object-fit:cover;" alt="{{ photo.title }}"/>
+          <div class="card-body">
+            <p class="card-text text-secondary">{{ photo.desc }}</p>
+          </div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <a href="/gallery" class="btn btn-sm btn-outline-secondary">View</a>
+            <small class="text-muted">{{ photo.year }}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

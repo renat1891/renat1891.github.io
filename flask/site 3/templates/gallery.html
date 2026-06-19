@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Album — Gallery{% endblock %}
+
+{% block content %}
+
+<div class="bg-dark py-5 text-center border-bottom border-secondary">
+  <div class="container">
+    <h1 class="fw-light text-white">Gallery</h1>
+    <div class="lead text-secondary">All {{ photos|length }} photos in the collection.</div>
+  </div>
+</div>
+
+<div class="bg-body-tertiary py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for photo in photos %}
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ photo.img }}" class="card-img-top"
+               style="height:225px;object-fit:cover;" alt="{{ photo.title }}"/>
+          <div class="card-body">
+            <h6 class="card-title text-white">{{ photo.title }}</h6>
+            <div class="card-text text-secondary">{{ photo.desc }}</div>
+          </div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <small class="text-muted">{{ photo.author }}</small>
+            <small class="text-muted">{{ photo.year }}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
